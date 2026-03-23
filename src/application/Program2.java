@@ -10,9 +10,14 @@ public class Program2 {
 
         DepartmentDao departmentDao = DaoFactory.CreateDepartmentDao();
 
-        IO.println("=== Test 1: deparment insert ===");
-        Department newDepartment = new Department(null, "Games");
-        departmentDao.insert(newDepartment);
-        IO.println("New Id = " + newDepartment.getId());
+//        IO.println("=== Test 1: department insert ===");
+//        Department newDepartment = new Department(null, "Games");
+//        departmentDao.insert(newDepartment);
+//        IO.println("New Id = " + newDepartment.getId());
+
+        IO.println("=== Test 2: department findById ===");
+        Department department = departmentDao.findById(5);
+        IO.println(department);
+
     }
 }
