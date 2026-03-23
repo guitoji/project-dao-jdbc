@@ -10,7 +10,7 @@ import java.util.List;
 
 public class Program {
 
-    static void main(String []args) {
+    static void main() {
 
         SellerDao sellerDao = DaoFactory.CreateSellerDao();
 
@@ -30,5 +30,16 @@ public class Program {
         for (Seller obj : list) {
             IO.println(obj);
         }
+
+        IO.println("\n=== Test 4: seller Insert ===");
+        Seller newSeller = new Seller(
+                null,
+                "John",
+                "john@gmail.com",
+                new Date(),
+                4000.00, department);
+        sellerDao.insert(newSeller);
+        IO.println("Inserted! New id = " + newSeller.getId());
+
     }
 }
