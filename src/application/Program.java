@@ -34,15 +34,15 @@ public class Program {
             IO.println(obj);
         }
 
-//        IO.println("\n=== Test 4: seller insert ===");
-//        Seller newSeller = new Seller(
-//                null,
-//                "John",
-//                "john@gmail.com",
-//                new Date(),
-//                4000.00, department);
-//        sellerDao.insert(newSeller);
-//        IO.println("Inserted! New id = " + newSeller.getId());
+        IO.println("\n=== Test 4: seller insert ===");
+        Seller newSeller = new Seller(
+                null,
+                "John",
+                "john@gmail.com",
+                new Date(),
+                4000.00, department);
+        sellerDao.insert(newSeller);
+        IO.println("Inserted! New id = " + newSeller.getId());
 
         IO.println("\n=== Test 5: seller update ===");
         seller = sellerDao.findById(6);

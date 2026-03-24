@@ -26,6 +26,7 @@ public class SellerDaoJDBC implements SellerDao {
         PreparedStatement st = null;
 
         try {
+
             st = conn.prepareStatement(
               "INSERT INTO seller "
                     + "(Name, Email, BirthDate, BaseSalary, DepartmentId) "
@@ -126,6 +127,7 @@ public class SellerDaoJDBC implements SellerDao {
         ResultSet rs = null;
 
         try {
+
             st = conn.prepareStatement(
                     "SELECT seller.*, department.Name as DepName "
                             + "From seller INNER JOIN department "
@@ -141,6 +143,7 @@ public class SellerDaoJDBC implements SellerDao {
                 return obj;
             }
             return null;
+
         } catch (SQLException e) {
             throw new DbException(e.getMessage());
         } finally {
