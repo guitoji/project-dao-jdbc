@@ -27,5 +27,10 @@ public class Program2 {
         for (Department obj : list) {
             IO.println(obj);
         }
+
+        IO.println("\n=== Test 4: department update ===");
+        department = departmentDao.findById(6);
+        department.setName("Medical");
+        departmentDao.update(department);
     }
 }
