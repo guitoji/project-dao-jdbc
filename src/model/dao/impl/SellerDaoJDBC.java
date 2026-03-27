@@ -83,7 +83,7 @@ public class SellerDaoJDBC implements SellerDao {
             if (rowsAffected == 0) {
                 throw new DbException("Inexpected error! No rows affected!");
             } else {
-                IO.println("Update completed!");
+                System.out.println("Update completed!");
             }
 
         } catch (SQLException e) {
@@ -109,7 +109,7 @@ public class SellerDaoJDBC implements SellerDao {
             if (rowsAffected == 0) {
                 throw new DbException("Error! This ID doesn't exist!");
             } else {
-                IO.println("Delete completed!");
+                System.out.println("Delete completed!");
             }
 
         } catch (SQLException e) {

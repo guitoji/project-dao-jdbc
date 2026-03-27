@@ -16,28 +16,28 @@ public class Program2 {
 
         DepartmentDao departmentDao = DaoFactory.CreateDepartmentDao();
 
-        IO.println("=== Test 1: department insert ===");
+        System.out.println("=== Test 1: department insert ===");
         Department newDepartment = new Department(null, "Games");
         departmentDao.insert(newDepartment);
-        IO.println("New Id = " + newDepartment.getId());
+        System.out.println("New Id = " + newDepartment.getId());
 
-        IO.println("=== Test 2: department findById ===");
+        System.out.println("=== Test 2: department findById ===");
         Department department = departmentDao.findById(5);
-        IO.println(department);
+        System.out.println(department);
 
-        IO.println("\n=== Test 3: department findAll ===");
+        System.out.println("\n=== Test 3: department findAll ===");
         List<Department> list = departmentDao.findAll();
         for (Department obj : list) {
-            IO.println(obj);
+            System.out.println(obj);
         }
 
-        IO.println("\n=== Test 4: department update ===");
+        System.out.println("\n=== Test 4: department update ===");
         department = departmentDao.findById(6);
         department.setName("Medical");
         departmentDao.update(department);
 
-        IO.println("\n=== Test 5: department delete ===");
-        IO.print("Enter id for delete test: ");
+        System.out.println("\n=== Test 5: department delete ===");
+        System.out.print("Enter id for delete test: ");
         int id = scanner.nextInt();
         departmentDao.deleteById(id);
 

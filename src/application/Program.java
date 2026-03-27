@@ -17,24 +17,24 @@ public class Program {
 
         SellerDao sellerDao = DaoFactory.CreateSellerDao();
 
-        IO.println("=== Test 1: seller findById ===");
+        System.out.println("=== Test 1: seller findById ===");
         Seller seller = sellerDao.findById(3);
-        IO.println(seller);
+        System.out.println(seller);
 
-        IO.println("\n=== Test 2: seller findByDepartment ===");
+        System.out.println("\n=== Test 2: seller findByDepartment ===");
         Department department = new Department(2, null);
         List<Seller> list = sellerDao.findByDepartment(department);
         for (Seller obj : list) {
-            IO.println(obj);
+            System.out.println(obj);
         }
 
-        IO.println("\n=== Test 3: seller findAll ===");
+        System.out.println("\n=== Test 3: seller findAll ===");
         list = sellerDao.findAll();
         for (Seller obj : list) {
-            IO.println(obj);
+            System.out.println(obj);
         }
 
-        IO.println("\n=== Test 4: seller insert ===");
+        System.out.println("\n=== Test 4: seller insert ===");
         Seller newSeller = new Seller(
                 null,
                 "John",
@@ -42,16 +42,16 @@ public class Program {
                 new Date(),
                 4000.00, department);
         sellerDao.insert(newSeller);
-        IO.println("Inserted! New id = " + newSeller.getId());
+        System.out.println("Inserted! New id = " + newSeller.getId());
 
-        IO.println("\n=== Test 5: seller update ===");
+        System.out.println("\n=== Test 5: seller update ===");
         seller = sellerDao.findById(6);
         seller.setName("Jordan");
         seller.setEmail("jordan@gmail.com");
         sellerDao.update(seller);
 
-        IO.println("\n=== Test 6: seller delete ===");
-        IO.print("Enter id for delete test: ");
+        System.out.println("\n=== Test 6: seller delete ===");
+        System.out.print("Enter id for delete test: ");
         int id = scanner.nextInt();
         sellerDao.deleteById(id);
 

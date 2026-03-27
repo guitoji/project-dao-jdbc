@@ -39,7 +39,7 @@ public class DepartmentDaoJDBC implements DepartmentDao {
                     obj.setId(id);
                 }
                 DB.closeResultSet(rs);
-                IO.println("Insert completed!");
+                System.out.println("Insert completed!");
             }
 
         } catch (SQLException e) {
@@ -66,7 +66,7 @@ public class DepartmentDaoJDBC implements DepartmentDao {
             if (rowsAffected == 0) {
                 throw new DbException("Unexpected error: No rows affected!");
             } else {
-                IO.println("Update Completed!");
+                System.out.println("Update Completed!");
             }
 
         } catch (SQLException e) {
@@ -92,7 +92,7 @@ public class DepartmentDaoJDBC implements DepartmentDao {
             if (rowsAffected == 0) {
                 throw new DbException("Unexpected error: No rows affected!");
             } else {
-                IO.println("Delete completed!");
+                System.out.println("Delete completed!");
             }
 
         } catch (SQLException e) {
